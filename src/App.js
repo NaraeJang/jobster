@@ -4,12 +4,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Dashboard />,
+    element: <Landing />,
     errorElement: <Error />,
   },
   {
-    path: "landing",
-    element: <Landing />,
+    path: "dashboard",
+    element: <Dashboard />,
     errorElement: <Error />,
   },
   {
