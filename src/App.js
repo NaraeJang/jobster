@@ -1,5 +1,7 @@
 import { Landing, Error, Dashboard, Register } from "./pages/";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +21,12 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <ToastContainer position="top-center" />
+      <RouterProvider router={router} />;
+    </>
+  );
 }
 
 export default App;

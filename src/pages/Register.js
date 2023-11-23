@@ -14,13 +14,21 @@ const Register = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target);
+    const { name, email, password, isMember } = values;
+
+    if ((!isMember && !name) || !email || !password) {
+      console.log("Please Fill Out All Fields");
+      return;
+    }
   };
 
   const handleChange = (e) => {
-    console.log(e.target);
-    setValues(e.target.value);
+    const name = e.target.name;
+    const value = e.target.value;
+    console.log(`${name}:${value}`);
+    setValues({ ...values, [name]: value });
   };
+
   const toggleMember = () => {
     setValues({ ...values, isMember: !values.isMember });
   };
