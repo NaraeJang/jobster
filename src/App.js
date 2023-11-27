@@ -1,5 +1,6 @@
 import { Landing, Error, Dashboard, Register } from "./pages/";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Profile, Stats, AddJob, AllJobs } from "./dashboard";
 
 const router = createBrowserRouter([
   {
@@ -8,9 +9,15 @@ const router = createBrowserRouter([
     errorElement: <Error />,
   },
   {
-    path: "dashboard",
+    path: "dashboard/",
     element: <Dashboard />,
     errorElement: <Error />,
+    children: [
+      { index: true, element: <Stats /> },
+      { path: "profile", element: <Profile /> },
+      { path: "alljobs", element: <AllJobs /> },
+      { path: "AddJob", element: <AddJob /> },
+    ],
   },
   {
     path: "register",
