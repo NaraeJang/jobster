@@ -48,6 +48,14 @@ const Register = () => {
     setValues({ ...values, isMember: !values.isMember });
   };
 
+  useEffect(() => {
+    if (user) {
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 3000);
+    }
+  }, [user, navigate]);
+
   return (
     <Wrapper className="full-page">
       <form onSubmit={onSubmit} className="form">
