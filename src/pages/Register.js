@@ -4,7 +4,7 @@ import Wrapper from "../assets/wrappers/RegisterPage";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser, loginUser } from "../features/user/userSlice";
-import { useNavigation } from "react-router-dom";
+import { useNavigate, useNavigation } from "react-router-dom";
 
 const initialState = {
   name: "",
@@ -18,7 +18,7 @@ const Register = () => {
   const { isLoading, user } = useSelector((store) => store.user);
   const dispatch = useDispatch();
 
-  const navigation = useNavigation();
+  const navigate = useNavigate();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -81,7 +81,7 @@ const Register = () => {
         />
 
         <button type="submit" className="btn btn-block" disabled={isLoading}>
-          {isLoading ? `login` : `submit`}
+          {isLoading ? `loading...` : `submit`}
         </button>
         <p>
           {values.isMember ? "Not a member yet?" : "Already a member?"}
