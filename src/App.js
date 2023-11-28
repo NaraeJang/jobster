@@ -1,6 +1,6 @@
-import { Landing, Error, Dashboard, Register } from "./pages/";
+import { Landing, Error, Register } from "./pages/";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Profile, Stats, AddJob, AllJobs } from "./dashboard";
+import { Profile, Stats, AddJob, AllJobs, SharedLayout } from "./dashboard";
 
 const router = createBrowserRouter([
   {
@@ -10,13 +10,13 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard/",
-    element: <Dashboard />,
+    element: <SharedLayout />,
     errorElement: <Error />,
     children: [
       { index: true, element: <Stats /> },
+      { path: "all-jobs", element: <AllJobs /> },
+      { path: "add-Job", element: <AddJob /> },
       { path: "profile", element: <Profile /> },
-      { path: "alljobs", element: <AllJobs /> },
-      { path: "AddJob", element: <AddJob /> },
     ],
   },
   {
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </>
   );
 }
