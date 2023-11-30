@@ -1,4 +1,4 @@
-import { Landing, Error, Register } from "./pages/";
+import { Landing, Error, Register, ProtectedRoute } from "./pages/";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Profile, Stats, AddJob, AllJobs, SharedLayout } from "./dashboard";
 
@@ -10,7 +10,11 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard/",
-    element: <SharedLayout />,
+    element: (
+      <ProtectedRoute>
+        <SharedLayout />
+      </ProtectedRoute>
+    ),
     errorElement: <Error />,
     children: [
       { index: true, element: <Stats /> },
