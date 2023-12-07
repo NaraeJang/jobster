@@ -2,7 +2,7 @@ import Wrapper from "../assets/wrappers/DashboardFormPage";
 import { FormRow, FormRowSelect } from "../components";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import { clearValues, handleChange } from "../features/job/jobSlice";
+import { clearValues, createJob, handleChange } from "../features/job/jobSlice";
 
 const AddJob = () => {
   const {
@@ -27,7 +27,7 @@ const AddJob = () => {
       return;
     }
 
-    console.log("handleSubmit working");
+    dispatch(createJob({ position, company, jobLocation, jobType, status }));
   };
 
   const handleJobInput = (e) => {
