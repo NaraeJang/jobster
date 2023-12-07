@@ -1,5 +1,5 @@
 import Wrapper from "../assets/wrappers/DashboardFormPage";
-import { FormRow } from "../components";
+import { FormRow, FormRowSelect } from "../components";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 
@@ -10,7 +10,7 @@ const AddJob = () => {
     company,
     jobLocation,
     jobType,
-    jobTypeOption,
+    jobTypeOptions,
     status,
     statusOptions,
     isEditing,
@@ -62,7 +62,20 @@ const AddJob = () => {
             handleChange={handleJobInput}
           />
           {/* job status */}
+          <FormRowSelect
+            name="status"
+            value={status}
+            handleChange={handleJobInput}
+            list={statusOptions}
+          />
           {/* job type */}
+          <FormRowSelect
+            name="jobType"
+            labelText="job type"
+            value={jobType}
+            handleChange={handleJobInput}
+            list={jobTypeOptions}
+          />
           <div className="btn-container">
             <button
               className="btn btn-block clear-btn"
