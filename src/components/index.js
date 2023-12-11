@@ -8,3 +8,4 @@ export { default as NavLinks } from "./NavLinks";
 export { default as Job } from "./Job";
 export { default as JobsContainer } from "./JobsContainer";
 export { default as SearchContainer } from "./SearchContainer";
+export { default as Loading } from "./Loading";
