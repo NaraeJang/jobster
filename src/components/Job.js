@@ -47,6 +47,7 @@ const Job = ({
                     jobLocation,
                     jobType,
                     status,
+                    position,
                   })
                 );
               }}>
