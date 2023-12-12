@@ -13,3 +13,5 @@ export { default as JobInfo } from "./JobInfo";
 export { default as StatsContainer } from "./StatsContainer";
 export { default as ChartsContainer } from "./ChartsContainer";
 export { default as StatItem } from "./StatItem";
+export { default as BarChart } from "./BarChart";
+export { default as AreaChart } from "./AreaChart";
