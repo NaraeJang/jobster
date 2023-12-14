@@ -14,16 +14,13 @@ const SearchContainer = () => {
     const name = e.target.name;
     const value = e.target.value;
 
+    if (isLoading) return;
     dispatch(handleChange({ name, value }));
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(clearFilters());
   };
-
-  if (isLoading) {
-    return <Wrapper>Loading...</Wrapper>;
-  }
 
   return (
     <Wrapper>
