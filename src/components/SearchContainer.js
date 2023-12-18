@@ -20,14 +20,12 @@ const SearchContainer = () => {
   };
 
   const debounce = () => {
-    console.log("debounce called");
     let timeOutID;
     return (e) => {
       setLocalSearch(e.target.value);
       clearTimeout(timeOutID);
       timeOutID = setTimeout(() => {
         dispatch(handleChange({ name: e.target.name, value: e.target.value }));
-        console.log("it is working");
       }, 1000);
     };
   };
